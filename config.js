@@ -12,5 +12,6 @@ define(function() {
 			}
 		},
 		'localhost': '10.210.15.52:81',
+		'root': 'crazyLab/index.html#',
 	}
 });

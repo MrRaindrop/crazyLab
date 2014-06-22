@@ -12,7 +12,7 @@ define(function(require) {
 
 		// use this for callbacks. bind with this PageManager instance.
 		// e.g. callback in method 'goto', pageLoader.load(). 
-		this._goToPageLoaded = _bind(this._goToPageLoaded, this);
+		this._onPageLoaded = _bind(this._onPageLoaded, this);
 	};
 
 	PageManager.prototype.PAGES_DIR = 'page';
@@ -20,7 +20,8 @@ define(function(require) {
 	PageManager.prototype.CURRENT_PAGE_CLASS_NAME = 'current_page';
 
 	/**
-	 * goto page xxx with page name.
+	 * goto page xxx with page name, only if it's in _pages cache.
+	 * else will load it and create it by _pageLoader.load().
 	 * @param  {String} pageName pageName str.
 	 * parameter page: e.g. 'postlist'.
 	 */
@@ -32,15 +33,16 @@ define(function(require) {
 			p.dom.classList.add(this.CURRENT_PAGE_CLASS_NAME);
 			p.onShow();
 		} else {
-			this._pageLoader.load(pageName, this._goToPageLoaded);
+			this._pageLoader.load(pageName, this._onPageLoaded);
 		}
 	};
 
 	/**
-	 * go to page xxx with Instance of Page.
+	 * call this once the page is loaded and instantiated.
 	 * @param  {Object} page Instance of Page object.
 	 */
-	PageManager.prototype._gotoPage = function(page) {
+	PageManager.prototype._onPageLoaded = function(page) {
+		// add this page to the _pages cache.
 		this._pages[page.uri] = page;
 		this._pageContainer.appendChild(page.dom);
 		page.onCreate(this);
