@@ -110,7 +110,7 @@ define(function(require) {
 			cbs = this._callbacks[pageDir],
 			page = new PageFunc();
 
-		html && page.html = html;
+		html && (page.html = html);
 		page.uri = pageDir;
 		for (var i = 0, l = css.length; i < l; i++) {
 			addStyle(css[i]);

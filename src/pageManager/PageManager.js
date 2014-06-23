@@ -12,7 +12,7 @@ define(function(require) {
 
 		// use this for callbacks. bind with this PageManager instance.
 		// e.g. callback in method 'goto', pageLoader.load(). 
-		this._onPageLoaded = _bind(this._onPageLoaded, this);
+		this._onPageLoaded = _.bind(this._onPageLoaded, this);
 	};
 
 	PageManager.prototype.PAGES_DIR = 'page';
