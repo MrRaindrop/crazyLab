@@ -53,7 +53,7 @@ define(function(require) {
 
 	};
 
-	PageManager.prototype.hideCurrentPage = function() {
+	PageManager.prototype._hideCurrentPage = function() {
 		if (!this._currentPage) {
 			return;
 		}

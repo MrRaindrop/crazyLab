@@ -37,7 +37,7 @@ define(function(require) {
 				// e.g. router.route('postlist/:tag1/:tag2', 'postlist');
 				router.route(str, rt.page);
 			}
-			this.get('router').on('route', this.onRoute);
+			router.on('route', _.bind(this.onRoute, this));
 		},
 
 		start: function() {
@@ -78,18 +78,19 @@ define(function(require) {
 			});
 			opt && _.extend(routeOpt, opt);
 			console.log('navigate to uri:', uri);
-			this.get('router').navigate(uri, opt);
+			this.get('router').navigate(uri, routeOpt);
 		},
 
 		onRoute: function(page, dataArr) {
 			console.log('onRoute-> page:', page, 'dataArr:', dataArr);
+			console.log(this.get('routes'));
 			var rt = this.get('routes')[page],
 				isPageChanged = false,
 				oldPage = this.get('currentPage'),
 				changedKeys = [],
 				self = this;
 
-			if (route) {
+			if (rt) {
 				if (page === oldPage) {
 					_.each(rt.keys, function(k, i, ks) {
 						if (rt.data[k] !== dataArr[i]) {
@@ -105,13 +106,13 @@ define(function(require) {
 				}
 				this.trigger('change:route', {
 					isPageChanged: isPageChanged,
-					route: _.extend({}, route),
+					route: _.extend({}, rt),
 					changedKeys: changedKeys
 				});
 				isPageChanged && this.trigger('change:page', {
 					oldPage: oldPage,
 					page: page,
-					route: route
+					route: rt
 				});
 			} else {
 				console.error('error:no match route of page ' + page);

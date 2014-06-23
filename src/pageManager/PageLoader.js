@@ -33,7 +33,7 @@ define(function(require) {
 		var PAGES_DIR = this.PAGES_DIR,
 			PAGE_CONF_FILE = this.PAGE_CONF_FILE,
 			configPath = 'text!' + PAGES_DIR + '/' + pageDir + '/' + PAGE_CONF_FILE;
-		this.callbacks[pageDir] = [cb];
+		this._callbacks[pageDir] = [cb];
 		console.log('Loading Page ' + pageDir + ' manifest ' + configPath);
 		var self = this;
 		require([configPath], function(cfg) {
@@ -53,10 +53,10 @@ define(function(require) {
 		var html = cfg.html,
 			css = cfg.css || [],
 			pageClass = cfg.js,
-			requirePaths = [],
+			requiredPaths = [],
 			self = this;
 
-		html && (requirePaths.push(this._getRequiredPath(pageDir + '/' + html, true)));
+		html && (requiredPaths.push(this._getRequiredPath(pageDir + '/' + html, true)));
 		pageClass && (requiredPaths.push(this._getRequiredPath(pageDir + '/' + pageClass)));
 		for (var i = 0, l = css.length; i < l; i++) {
 			requiredPaths.push(this._getRequiredPath(pageDir + '/' + css[i], true));
@@ -68,8 +68,7 @@ define(function(require) {
 			var idx = 0;
 			html && (htmlText = arguments[idx++]);
 			if (pageClass) {
-				PageFunc = pageClass;
-				++idx;
+				PageFunc = arguments[idx++];
 			} else {
 				PageFunc = Page;
 			}
@@ -94,6 +93,7 @@ define(function(require) {
 	 */
 	PageLoader.prototype._getRequiredPath = function(res, isText) {
 		isText && (isText = 'text!');
+		console.log((isText || '') + this.PAGES_DIR + '/' + res);
 		return (isText || '') + this.PAGES_DIR + '/' + res;
 	}
 
@@ -118,7 +118,7 @@ define(function(require) {
 		for (var i = 0, l = cbs.length; i < l; i++) {
 			cbs[i](page);
 		};
-		delete self._callbacks[pageDir];
+		delete this._callbacks[pageDir];
 	}
 
 	return PageLoader;

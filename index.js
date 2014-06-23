@@ -1,7 +1,7 @@
 require.config({
 	baseUrl: 'src',
 	paths: {
-		'text': '../text',
+		'text': '../lib/text',
 		'jquery': '../lib/jquery-1.11.1.min',
 		'backbone': '../lib/backbone-min',
 		'underscore': '../lib/underscore-min',
