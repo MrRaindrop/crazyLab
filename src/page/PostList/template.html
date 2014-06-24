@@ -1,3 +1,31 @@
-<div class="page-postlist">
-	<h1><%=title%></h1>
+<div class='page-postlist'>
+	<div class='header'>
+		<span class="title">CrazyLAB</span>
+	</div>
+	<div class='body'>
+		<ul class="content">
+		<% _.each(list, function(post, i, list) { %>
+			<li class="post" id="post_<%=post.id%>">
+				<div class="up">
+					<div class="icon" style="background-image:url(<%=post.author.icon%>)"></div>
+					<span class="type"><%=post.type%></span>
+					<span class="author"><%=post.author.name%></span>
+				</div>
+				<div class="mid">
+					<div class="title"><%=post.title%></div>
+					<div class="reply-num"><%=post.reply.length%></div>
+				</div>
+				<div class="down">
+					<div class="time"><%=post.time%></div>
+					<div class="last-reply">最后回复
+						<a class="author" href="<%=post.reply[0].author.id%>"><%=post.reply[0].author.name%></a>
+					</div>
+				</div>
+			</li>
+		<% }); %>
+		</ul>
+	</div>
+	<div class="footer">
+		<span class="copyright">&copy;&nbsp;<%=new Date().getFullYear()%>&nbsp;CrazyLAB</span>
+	</div>
 </div>

@@ -5,11 +5,15 @@ body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div {
 }
 
 html,body {
+	color: #666;
 	width: 100%;
-	height: 100%;
 	background-color: #f7f7f7;
 }
 
 ul,ol{
     list-style-type:none;
+}
+
+.current-page {
+	width: 100%;
 }

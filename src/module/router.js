@@ -42,8 +42,17 @@ define(function(require) {
 
 		start: function() {
 			Backbone.history.start({ pushState: true, root: config.root });
-			if (!location.hash && config.home) {
+			var pg = location.hash.substr(0, location.hash.indexOf('/')),
+				keys, rt = config.routes[pg],
+				routeOpt = {
+					trigger: true,
+					replace: false
+				};
+			if (!location.hash && !rt && config.home) {
 				this.setHome();
+			} else if (!location.hash && rt) {
+				keys = rt.keys;
+				this.get('router').navigate(location.hash, routeOpt);
 			}
 		},
 

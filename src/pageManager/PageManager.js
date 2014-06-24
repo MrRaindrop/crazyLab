@@ -44,8 +44,8 @@ define(function(require) {
 	PageManager.prototype._onPageLoaded = function(page) {
 		// add this page to the _pages cache.
 		this._pages[page.uri] = page;
-		this._pageContainer.appendChild(page.dom);
 		page.onCreate(this);
+		this._pageContainer.appendChild(page.dom);
 		this.goto(page.uri);
 	};
 

@@ -21,4 +21,6 @@ define(function() {
 	Page.prototype.onDestroy = function() {
 		console.log('Page.onDestroy.');
 	};
+
+	return Page;
 });

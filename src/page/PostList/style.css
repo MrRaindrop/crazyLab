@@ -1,0 +1,133 @@
+.page-postlist {
+	position: relative;
+	width: 100%;
+	background-color: #f7f7f7;
+}
+
+.page-postlist .header {
+	position: relative;
+	width: 100%;
+	height: 48px;
+	color: #fff;
+	background-color: #27ae61;
+}
+
+.page-postlist .header > .title {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	margin-top: -10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.page-postlist .body {
+	position: relative;
+	width: 100%;
+}
+
+.page-postlist .body .content .post {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	padding: 16px;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
+
+.page-postlist .body .content .post .up {
+}
+
+.page-postlist .body .content .post .up .icon {
+	float: left;
+	width: 24px;
+	height: 24px;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+}
+
+.page-postlist .body .content .post .up .type {
+	margin-left: 4px;
+	color: #666;
+	font-size: 12px;
+	background-color: #f7f7f7;
+	border-radius: 2px;
+}
+
+.page-postlist .body .content .post .up .author {
+	margin-left: 4px;
+	color: #27ae61;
+	font-size: 12px;
+}
+
+.page-postlist .body .content .post .mid {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	clear: left;
+	float: left;
+	position: relative;
+	width: 100%;
+	margin-top: 4px;
+	padding-right: 40px;
+}
+
+.page-postlist .body .content .post .mid .title {
+	color: #666;
+	font-size: 14px;
+}
+
+.page-postlist .body .content .post .mid .reply-num {
+	position: absolute;
+	right: 0;
+	width: 24px;
+	top: 50%;
+	margin-top: -8px;
+	padding: 2px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	line-height: 16px;
+	background-color: #27ae61;
+	border-radius: 2px;
+}
+
+.page-postlist .body .content .post .down {
+	clear: left;
+	float: left;
+	position: relative;
+	margin-top: 4px;
+	height: 16px;
+	font-size: 12px;
+}
+
+.page-postlist .body .content .post .down .time {
+	float: left;
+	color: #999;
+}
+
+.page-postlist .body .content .post .down .last-reply {
+	float: left;
+	margin-left: 4px;
+	color: #999;
+}
+
+.page-postlist .footer {
+	position: relative;
+	width: 100%;
+	height: 48px;
+	color: #fff;
+	background-color: #27ae61;
+}
+
+.page-postlist .footer > .copyright {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	margin-top: -8px;
+	font-size: 8px;
+}
+

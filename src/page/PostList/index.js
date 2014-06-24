@@ -1,33 +1,38 @@
 define(function(require) {
 
-	var View = require('./view'),
-		Backbone = require('backbone'),
-		_ = require('underscore');
+	var _ = require('underscore'),
+		$ = require('jquery'),
+		Page = require('pageManager/Page'),
+		inherit = require('util/inherits');
 
-	var PostList = Backbone.Model.extend({
+	var PostList = function() {
+		Page.call(this);
+	};
 
-		// constructor: function() {
-		// 	console.log('PostList constructor!');
-		// },
+	inherits(PostList, Page);
 
-		initialize: function() {
-			this.dom = document.createElement('div');
-			console.log('PostList initialize!');
-			this.view = new View(this);
-		},
+	PostList.prototype.onCreate = function() {
+		this.dom = document.createElement('div');
+		// test
+		var json = require('text!../../../data/postlist.json');
+		// console.log(json);
+		var res = JSON.parse(json);
+		console.log(res);
+		// console.log(JSON.parse(require('text!../../../data/postlist.json')));
+		// var res = JSON.parse(require('text!../../../data/postlist.json')).res;
+		var template = _.template(this.html, {
+			list: res.results
+		});
+		this.dom.innerHTML = template;
+	};
 
-		onCreate: function() {
-			alert('on postlist create!');
-		},
+	PostList.prototype.onShow = function() {
 
-		onShow: function() {
-			alert('on postlist show!');
-		},
+	};
 
-		onHide: function() {
-			alert('on postlist hide!');
-		}
- 	});
+	PostList.prototype.onHide = function() {
+
+	};
 
 	return PostList;
 
