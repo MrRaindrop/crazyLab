@@ -37,7 +37,7 @@ define(function(require) {
 				// e.g. router.route('postlist/:tag1/:tag2', 'postlist');
 				router.route(str, rt.page);
 			}
-			router.on('route', _.bind(this.onRoute, this));
+			router.on('route', this.onRoute, this);
 		},
 
 		start: function() {
