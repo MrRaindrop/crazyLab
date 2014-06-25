@@ -1,0 +1,31 @@
+{
+	"id": "0001",
+	"tag1": "coder",
+	"tag2": "life",
+	"title": "高考之我最喜欢的中国大学官方网站",
+	"content": "那天无意间看到我们学校的正门，感觉风格好眼熟, 然后终于意识到...",
+	"type": "程序员生活",
+	"author": {
+		"id": "0002",
+		"name": "quentin_yo",
+		"icon": "http://cdn.v2ex.com/avatar/a472/370c/28502_normal.png?m=1357178080"
+	},
+	"time": "2014-06-14",
+	"reply": [{
+		"author": {
+			"id": "0001",
+			"name": "Zero",
+			"icon": "http://cdn.v2ex.com/avatar/a472/370c/28502_normal.png?m=1357178080"
+		},
+		"time": "2014-06-14",
+		"content": "真好呀"
+	}, {
+		"author": {
+			"id": "0002",
+			"name": "quentin_yo",
+			"icon": "http://cdn.v2ex.com/avatar/a472/370c/28502_normal.png?m=1357178080"
+		},
+		"time": "2014-06-14",
+		"content": "真不错！"
+	}]
+}

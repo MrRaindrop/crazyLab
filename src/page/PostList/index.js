@@ -2,8 +2,11 @@ define(function(require) {
 
 	var _ = require('underscore'),
 		$ = require('jquery'),
+		router = require('module/router'),
 		Page = require('pageManager/Page'),
-		inherit = require('util/inherits');
+		inherit = require('util/inherits'),
+		HeaderUI = require('ui/header/Header'),
+		FooterUI = require('ui/footer/Footer');
 
 	var PostList = function() {
 		Page.call(this);
@@ -24,6 +27,28 @@ define(function(require) {
 			list: res.results
 		});
 		this.dom.innerHTML = template;
+		this.$d = $(this.dom);
+		this.headerUI = new HeaderUI(this.$d.find('.header')[0], {});
+		this.footerUI = new FooterUI(this.$d.find('.footer')[0], {});
+		this.addEvents();
+	};
+
+	PostList.prototype.addEvents = function() {
+		this.$d.find('li.post').on('tap', _.bind(this.onAuthorTapped, this));
+	};
+
+	PostList.prototype.onAuthorTapped = function(e) {
+		var _t = $(e.target), id;
+		if (_t.hasClass('author')) {
+			id = _t.attr('data-id');
+			console.log('go to user page id:', id);
+			// router.setRoute('user', { 'id': id });
+		} else if (_t.hasClass('title')) {
+			_t = _t.closest('li.post');
+			id = _t.attr('data-id');
+			console.log('go to post page, id:', id);
+			router.setRoute('post', { 'id': id });
+		}
 	};
 
 	PostList.prototype.onShow = function() {
@@ -31,7 +56,7 @@ define(function(require) {
 	};
 
 	PostList.prototype.onHide = function() {
-
+		this.$d.css('display', 'none');
 	};
 
 	return PostList;

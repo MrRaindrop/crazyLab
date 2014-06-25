@@ -1,0 +1,15 @@
+.ui-footer {
+	position: relative;
+	width: 100%;
+	height: 48px;
+	color: #fff;
+	background-color: #27ae61;
+}
+
+.ui-footer > .copyright {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	margin-top: -8px;
+	font-size: 8px;
+}

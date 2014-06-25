@@ -2,7 +2,8 @@ require.config({
 	baseUrl: 'src',
 	paths: {
 		'text': '../lib/text',
-		'jquery': '../lib/jquery-1.11.1.min',
+		// 'jquery': '../lib/jquery-1.11.1.min',
+		'jquery': '../lib/zepto.min',
 		'backbone': '../lib/backbone-min',
 		'underscore': '../lib/underscore-min',
 		'config': '../config',
@@ -15,9 +16,9 @@ require.config({
 	        'deps': [ 'jquery', 'underscore' ],
 	        'exports': 'Backbone'
 	    },
-	    // 'jquery': {
-	    // 	'exports': 'Zepto'
-	    // },
+	    'jquery': {
+	    	'exports': 'Zepto'
+	    },
 	    // "jQT": {
 	    // 	"exports": '$.jQT',
 	    // 	"init": function() {

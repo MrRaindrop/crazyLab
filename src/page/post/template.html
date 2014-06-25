@@ -1,0 +1,36 @@
+<div class="page-post">
+	<div class='header'>
+	</div>
+	<div class="crumbs">
+		crazyLAB > <%=tag2%>
+	</div>
+	<div class="title-ct">
+		<div class="author-icon" style="background-image:url(<%=author.icon%>)"></div>
+		<div class="title"><%=title%></div>
+		<div class="info">
+			<span class="author" data-id="<%=author.id%>"><%=author.name%></span>
+			&nbsp;<span class="time"><%=time%></span>
+		</div>
+	</div>
+	<div class="contentCt">
+		<div class="content"><%=content%></div>
+	</div>
+	<div class="reply">
+		<ul>
+		<% _.each(reply, function(rep, i, reply) { %>
+			<li class="detail">
+				<div class="icon" style="background-image:url(<%=rep.author.icon%>)"></div>
+				<div class="up">
+					<span class="author"><%=rep.author.name%></span>
+					&nbsp;<span class="time"><%=rep.time%></span>
+				</div>
+				<div class="content"><%=rep.content%></div>
+			</li>
+		<% }); %>
+		</ul>
+	</div>
+	<div class="ads">
+	</div>
+	<div class="footer">
+	</div>
+</div>

@@ -3,6 +3,12 @@ define(function() {
 		'routes': [{
 			'page': 'postlist',
 			'keys': ['tag1', 'tag2']
+		}, {
+			'page': 'post',
+			'keys': ['id']
+		}, {
+			'page': 'user',
+			'keys': ['id']
 		}],
 		'home': {
 			'page': 'postlist',

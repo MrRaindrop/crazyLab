@@ -1,0 +1,132 @@
+.page-post {
+	position: relative;
+	width: 100%;
+	background-color: #f7f7f7;
+}
+
+.page-post .header {
+	position: relative;
+	width: 100%;
+}
+
+.page-post .crumbs {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	height: 20px;
+	padding: 0 16px;
+	font-size: 12px;
+	line-height: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.page-post .title-ct {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	min-height: 48px;
+	padding: 8px 50px 2px 16px;
+}
+
+.page-post .title-ct .author-icon {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	background-size: 32px;
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+}
+
+.page-post .title-ct .title {
+	color: #666;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.page-post .title-ct .info {
+
+}
+
+.page-post .title-ct .info .author {
+	color: #27ae61;
+	font-size: 12px;
+}
+
+.page-post .title-ct .info .time {
+	color: #999;
+	font-size: 12px;
+}
+
+.page-post .contentCt {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	padding: 16px;
+	font-size: 14px;
+	border-bottom: 1px solid #ddd;
+}
+
+.page-post .reply {
+	position: relative;
+	width: 100%;
+}
+
+.page-post .reply .detail {
+	position: relative;
+	width: 100%;
+}
+
+.page-post .reply .detail {
+	position: relative;
+	width: 100%;
+	padding: 4px 4px 4px 46px;
+	border-bottom: 1px solid #ddd;
+}
+
+.page-post .reply .detail .icon {
+	position: absolute;
+	top: 6px;
+	left: 16px;
+	width: 24px;
+	height: 24px;
+	background-size: 24px;
+	background-repeat: no-repeat;
+}
+
+.page-post .reply .detail .up {
+}
+
+.page-post .reply .detail .up .author {
+	color: #27ae61;
+	font-size: 12px;
+}
+
+.page-post .reply .detail .up .time {
+	color: #999;
+}
+
+.page-post .reply .detail .content {
+	padding: 4px 0;
+	color: #999;
+	font-size: 12px;
+}
+
+.page-post .ads {
+	position: relative;
+	width: 100%;
+}
+
+.page-post .footer {
+	position: relative;
+	width: 100%;
+}
