@@ -42,17 +42,19 @@ define(function(require) {
 
 		start: function() {
 			Backbone.history.start({ pushState: true, root: config.root });
-			var pg = location.hash.substr(0, location.hash.indexOf('/')),
-				keys, rt = config.routes[pg],
+			console.log('config', config);
+			var path = location.hash.substr(2),
+				pg = path.substr(0, path.indexOf('/')),
+				keys, rt = this.get('routes')[pg],
 				routeOpt = {
 					trigger: true,
 					replace: false
 				};
 			if (!location.hash && !rt && config.home) {
 				this.setHome();
-			} else if (!location.hash && rt) {
+			} else if (location.hash && rt) {
 				keys = rt.keys;
-				this.get('router').navigate(location.hash, routeOpt);
+				this.get('router').navigate(location.hash.substr(2), routeOpt);
 			}
 		},
 
