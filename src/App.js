@@ -20,6 +20,7 @@ define([
 	App.prototype.init = function() {
 
 		this.pm = new PageManager(this.pageContainer, this);
+		router.set('pageManager', this.pm);
 		router.on('change:page', function(opt) {
 			this.pm.goto(opt.page);
 		}, this);

@@ -31,6 +31,7 @@ define(function(require) {
 		this.headerUI = new HeaderUI(this.$d.find('.header')[0], {});
 		this.footerUI = new FooterUI(this.$d.find('.footer')[0], {});
 		this.addEvents();
+		this.onShow();
 	};
 
 	PostList.prototype.addEvents = function() {
@@ -43,7 +44,7 @@ define(function(require) {
 			id = _t.attr('data-id');
 			console.log('go to user page id:', id);
 			// router.setRoute('user', { 'id': id });
-		} else if (_t.hasClass('title')) {
+		} else {
 			_t = _t.closest('li.post');
 			id = _t.attr('data-id');
 			console.log('go to post page, id:', id);
@@ -52,7 +53,7 @@ define(function(require) {
 	};
 
 	PostList.prototype.onShow = function() {
-
+		this.$d.css('display', 'block');
 	};
 
 	PostList.prototype.onHide = function() {

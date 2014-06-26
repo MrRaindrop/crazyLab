@@ -76,17 +76,24 @@
 	border-bottom: 1px solid #ddd;
 }
 
+.page-post .contentCt .content {
+	color: #555;
+}
+
 .page-post .reply {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	position: relative;
 	width: 100%;
 }
 
 .page-post .reply .detail {
-	position: relative;
-	width: 100%;
-}
-
-.page-post .reply .detail {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	position: relative;
 	width: 100%;
 	padding: 4px 4px 4px 46px;
@@ -117,16 +124,24 @@
 
 .page-post .reply .detail .content {
 	padding: 4px 0;
-	color: #999;
+	color: #666;
 	font-size: 12px;
 }
 
 .page-post .ads {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	position: relative;
 	width: 100%;
 }
 
 .page-post .footer {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
 	position: relative;
 	width: 100%;
 }

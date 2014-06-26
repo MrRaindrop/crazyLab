@@ -29,6 +29,7 @@ define(function(require) {
 		this.headerUI = new HeaderUI(this.$d.find('.header')[0], {});
 		this.footerUI = new FooterUI(this.$d.find('.footer')[0], {});
 		this.addEvents();
+		this.onShow();
 	};
 
 	Post.prototype.addEvents = function() {
@@ -36,7 +37,7 @@ define(function(require) {
 	};
 
 	Post.prototype.onShow = function() {
-
+		this.$d.css('display', 'block');
 	};
 
 	Post.prototype.onHide = function() {

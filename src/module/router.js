@@ -18,12 +18,16 @@ define(function(require) {
 			 *   keys: [],
 			 *   data: {} }
 			 */
-			routes: {}
+			routes: {},
+			hist: {	// history
+				hash: [],
+				idx: -1
+			}
 		},
 
 		initialize: function() {
 			this.set('router', new Backbone.Router());
-			var rt, str,
+			var rt, str, self = this,
 				routes = this.get('routes'),
 				router = this.get('router');
 			for (var i = 0, l = config.routes.length; i < l; i++) {
@@ -38,6 +42,26 @@ define(function(require) {
 				router.route(str, rt.page);
 			}
 			router.on('route', this.onRoute, this);
+			window.addEventListener('hashchange', _.bind(this.onHashchange, this), false);
+	        window.addEventListener('beforeonload', _.bind(this.onBeforeonload, this), false);
+		},
+
+		// when browser history back or forward.
+		onHashchange: function() {
+			var hash = decodeURIComponent(location.hash),
+				hist = this.get('hist');
+        	hash.charAt(0) === '#' && (hash = hash.substr(2));
+
+        	// tell if back or forward in history line.
+        	if (hash === hist.hash[hist.idx - 1]) {
+        		this.back();
+        	} else if (hash === hist.hash[hist.idx + 1]) {
+        		this.forward();
+        	}   	
+		},
+
+		onBeforeonload: function() {
+			alert('确定要退出？');
 		},
 
 		start: function() {
@@ -75,6 +99,7 @@ define(function(require) {
 		setRoute: function(page, data, opt) {
 			var rt = this.get('routes')[page],
 				uri = page,
+				// hist = page,
 				routeOpt = {
 					trigger: true,
 					replace: false
@@ -85,21 +110,92 @@ define(function(require) {
 				return;
 			}
 			_.each(rt.keys, function(k, i, ks) {
+				// hist += '/' + (data[k]);
 				uri += '/' + encodeURIComponent(data[k]);
 			});
+			// this.get('history').push(hist);
 			opt && _.extend(routeOpt, opt);
 			console.log('navigate to uri:', uri);
 			this.get('router').navigate(uri, routeOpt);
 		},
 
-		onRoute: function(page, dataArr) {
+		/**
+		 * translate:
+		 * '/postlist/code/life' to {
+		 * 	uri: 'postlist',
+		 * 	data: {
+		 * 			'tag1': code,
+		 * 			'tag2': postlist
+		 * 		},
+		 * 	keys: ['tag1', 'tag2']
+		 * }
+		 */
+		uriToPage: function(hash) {
+			var arr = hash.split('/'),
+				pgStr = arr[0],
+				pg = { data: {}, keys: [] },
+				route = this.get('routes')[pgStr];
+			if (route) {
+				console.log('route', route);
+				pg.uri = pgStr;
+				_.each(route.keys, function(k, i, ks) {
+					pg.data[k] = arr[i+1];
+					pg.keys.push(k);
+				});
+				return pg;
+			} else {
+				console.error('page is not in config.');
+			}
+		},
+
+		back: function() {
+			var hist = this.get('hist'),
+				hash = hist.hash[hist.idx - 1],
+				pg = this.uriToPage(hash),
+				dataArr = [];
+			hist.idx--;
+			_.each(pg.keys, function(k, i, ks) {
+				dataArr.push[pg.data[k]];
+			});
+			this.onRoute(pg.uri, dataArr, true);
+		},
+
+		forward: function() {
+			var hist = this.get('hist'),
+				hash = hist.hash[hist.idx + 1],
+				pg = this.uriToPage(hash),
+				dataArr = [];
+			hist.idx++;
+			_.each(pg.keys, function(k, i, ks) {
+				dataArr.push[pg.data[k]];
+			});
+			this.onRoute(pg.uri, dataArr, true);
+		},
+
+		// noAddToHist: true or null/undefined.
+		onRoute: function(page, dataArr, noAddToHist) {
 			console.log('onRoute-> page:', page, 'dataArr:', dataArr);
 			console.log(this.get('routes'));
 			var rt = this.get('routes')[page],
 				isPageChanged = false,
 				oldPage = this.get('currentPage'),
 				changedKeys = [],
-				self = this;
+				self = this,
+				hash = page,
+				hist = this.get('hist');
+
+			if (!noAddToHist) {
+				console.log('hashs', this.get('hist').hash);
+				if (hist.idx < hist.hash.length - 1) {
+					hist.hash.splice(hist.idx + 1);
+				}
+				_.each(dataArr, function(d, i, arr) {
+					d && (hash += '/' + d);
+				});
+				hist.hash.push(decodeURIComponent(hash));
+				hist.idx++;
+				console.log('hashs', this.get('hist').hash);
+			}
 
 			if (rt) {
 				if (page === oldPage) {

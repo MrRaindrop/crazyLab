@@ -8,7 +8,6 @@ define(function(require) {
 	addStyle(css);
 
 	var Header = function(el, opt) {
-		var tp, df;
 		if (el) {
 			el.innerHTML = html;
 		}
