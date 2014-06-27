@@ -8,16 +8,16 @@
 				<div class="up">
 					<div class="icon" style="background-image:url(<%=post.author.icon%>)"></div>
 					<span class="type"><%=post.type%></span>
-					<span class="author" data-id="<%=post.author.id%>"><%=post.author.name%></span>
+					<span class="author touch-highlight" data-id="<%=post.author.id%>"><%=post.author.name%></span>
 				</div>
 				<div class="mid">
-					<div class="title"><%=post.title%></div>
+					<div class="title touch-highlight"><%=post.title%></div>
 					<div class="reply-num"><%=post.reply.length%></div>
 				</div>
 				<div class="down">
 					<div class="time"><%=post.time%></div>
 					<div class="last-reply">最后回复
-						<span class="author" data-id="<%=post.reply[0].author.id%>"><%=post.reply[0].author.name%></span>
+						<span class="author touch-highlight" data-id="<%=post.reply[0].author.id%>"><%=post.reply[0].author.name%></span>
 					</div>
 				</div>
 			</li>

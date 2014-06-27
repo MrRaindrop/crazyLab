@@ -2,7 +2,7 @@ define(function() {
 	return {
 		'routes': [{
 			'page': 'postlist',
-			'keys': ['tag1', 'tag2']
+			'keys': ['tag']
 		}, {
 			'page': 'post',
 			'keys': ['id']
@@ -13,8 +13,7 @@ define(function() {
 		'home': {
 			'page': 'postlist',
 			'data': {
-				'tag1': 'coder',
-				'tag2': 'life'
+				'tag': 'life',
 			}
 		},
 		'localhost': '10.210.15.52:81',

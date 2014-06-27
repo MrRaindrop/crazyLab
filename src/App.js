@@ -24,39 +24,19 @@ define([
 		router.on('change:page', function(opt) {
 			this.pm.goto(opt.page);
 		}, this);
-
+		this.bindGlobalEvents();
 		router.start();
 
-		// var Router = Backbone.Router.extend({
+	};
 
-		// 	routes: {
-		// 		'postlist/:tag1/:tag2': 'postlist',
-		// 		'post/:tag1/:tag2/:pId': 'post'
-		// 	},
-			
-		// 	postlist: function(tag1, tag2) {
-		// 		console.log('postlist', tag1, tag2);
-		// 	},
-
-		// 	post: function(tag1, tag2, pId) {
-		// 		console.log('post', tag1, tag2, pId);
-		// 	}
-		// });
-
-		// this.router = new Router();
-		// Backbone.history.start({ pushState: true, root: 'proj1/index.html#' });
-
-		// var h = config.home,
-		// 	hr = h.page,
-		// 	hr2 = '';
-
-		// for (var key in h.data) {
-		// 	hr2 += '/' + h.data[key];
-		// }
-		// hr += hr2;
-
-		// this.router.navigate(hr, { 'trigger': true });
-
+	App.prototype.bindGlobalEvents = function() {
+		$('.touch-highlight').live('tap', function(e) {
+			var _t = $(e.target);
+			_t.addClass('highlight');
+			setTimeout(function() {
+				_t.removeClass('highlight');
+			}, 200);
+		});
 	};
 
 	App.prototype.catchError = function() {

@@ -12,14 +12,18 @@ html,body {
 	background-color: #f7f7f7;
 }
 
-ul,ol{
+ul,ol {
     list-style-type:none;
 }
 
-a {
+.highlight {
+	text-decoration: underline;
+}
+
+/*a {
 	color: #27ae61;
 	text-decoration: none;
-}
+}*/
 
 .current-page {
 	width: 100%;

@@ -25,6 +25,10 @@
 	overflow: hidden;
 }
 
+/*.page-postlist .body .content .post:hover {
+	background-color: #ccc;
+}*/
+
 .page-postlist .body .content .post .up {
 }
 
@@ -40,8 +44,12 @@
 	margin-left: 4px;
 	color: #666;
 	font-size: 12px;
-	background-color: #f7f7f7;
+	background-color: #eee;
+	padding: 2px 4px;
 	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
 }
 
 .page-postlist .body .content .post .up .author {
@@ -64,7 +72,7 @@
 }
 
 .page-postlist .body .content .post .mid .title {
-	color: #666;
+	color: #5E7C6B;
 	font-size: 14px;
 }
 
