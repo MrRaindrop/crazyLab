@@ -1,0 +1,28 @@
+{
+	"id": "0001",
+	"name": "Zero",
+	"icon": "http://cdn.v2ex.com/avatar/a472/370c/28502_normal.png?m=1357178080",
+	"site": "www.zero.com",
+	"number": 2,
+	"joinTime": "2014-05-01 12:33:21",
+	"posts": [{
+		"id": "0001",
+		"title": "GFW 已经丧心病狂了！AppCoda 已经被墙了，似乎是 CloudFlare 的节点都被认证了",
+		"tag": "firstblood",
+		"time": "2014-06-14"
+	}, {
+		"id": "0002",
+		"title": "GFW 已经丧心病狂了！AppCoda 已经被墙了，似乎是 CloudFlare 的节点都被认证了",
+		"tag": "firstblood",
+		"time": "2014-06-14"
+	}],
+	"reply": [{
+		"id": "0001",
+		"time": "2014-06-14",
+		"content": "真好呀"
+	}, {
+		"id": "0002",
+		"time": "2014-06-14",
+		"content": "真不错！"
+	}]
+}

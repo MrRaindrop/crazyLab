@@ -1,0 +1,36 @@
+<div class='page-user'>
+	<div class='header'>
+	</div>
+	<div class='body'>
+		<div class="info">
+			<div class="icon" style="background-image:url(<%=icon%>)"></div>
+			<div class="detail">
+				<div class="name"><%=name%></div>
+				<div class="content">FreeIO第<%=number%>号会员，加入于<%=joinTime%></div>
+				<div class="site touch-highlight"><%=site%></div>
+			</div>
+		</div>
+		<div class="posts">
+			<div class="top"><%=name%>最近创建的主题</div>
+			<div class="content">
+				<ul>
+				<% _.each(posts, function(post, i, posts) { %>
+					<li class="post" data-id="<%=post.id%>">
+						<div class="title touch-highlight"><%=post.title%></div>
+						<div class="info">
+							<span class="tag"><%=post.tag%></span>
+							<span class="author"><%=name%></span>
+							<span class="time"><%=post.time%></span>
+						</div>
+					</li>
+				<% }) %>
+				</ul>
+			</div>
+			<div class="bottom"></div>
+		</div>
+		<div class="reply">
+		</div>
+	</div>
+	<div class="footer">
+	</div>
+</div>

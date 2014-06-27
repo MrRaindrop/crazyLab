@@ -1,0 +1,5 @@
+{
+	"html": "template.html",
+	"css": ["style.css"],
+	"js": "index"
+}

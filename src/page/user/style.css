@@ -1,0 +1,129 @@
+.page-user {
+	position: relative;
+	width: 100%;
+	background-color: #f7f7f7;
+}
+
+.page-user .header {
+	position: relative;
+	width: 100%;
+}
+
+.page-user .body {
+	position: relative;
+	width: 100%;
+}
+
+.page-user .body > .info {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	padding: 12px 12px 12px 44px;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .info > .icon {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	width: 32px;
+	height: 32px;
+	background-size: 32px;
+	background-repeat: no-repeat;
+}
+
+.page-user .body > .info > .detail {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	width: 100%;
+	padding-left: 4px;
+	font-size: 10px;
+}
+
+.page-user .body > .info > .detail > .name {
+	color: #333;
+	font-size: 16px;
+}
+
+.page-user .body > .info > .detail > .content {
+}
+
+.page-user .body > .info > .detail > .site {
+	color: #5E7C6B;
+}
+
+.page-user .body > .posts {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	padding: 16px;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .posts > .top {
+	padding: 2px 0;
+	font-size: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .posts > .content {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+}
+
+.page-user .body > .posts > .content .post {
+	position: relative;
+	width: 100%;
+	padding: 16px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .posts > .content .post > .title {
+	font-size: 14px;
+	color: #5E7C6B;
+}
+
+.page-user .body > .posts > .content .post > .info {
+	margin-top: 4px;
+}
+
+.page-user .body > .posts > .content .post > .info > span {
+	margin-right: 4px;
+}
+
+.page-user .body > .posts > .content .post > .info > .tag {
+	color: #777;
+	padding: 2px 4px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	background-color: #eee;
+}
+
+.page-user .body > .posts > .content .post > .info > .author {
+	color: #27ae61;
+}
+
+.page-user .body > .posts > .content .post > .info > .time {
+}
+
+.page-user .body > .reply {
+}
+
+.page-user .footer {
+	position: relative;
+	width: 100%;
+}
