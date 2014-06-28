@@ -29,6 +29,26 @@
 			<div class="bottom"></div>
 		</div>
 		<div class="reply">
+			<div class="top"><%=name%>最近回复了</div>
+			<div class="content">
+				<ul>
+				<% _.each(reply, function(rep, i, reps) { %>
+					<li class="rep">
+						<div class="info">
+							<div class="time"><%=rep.time%></div>
+							<div class="reply-to" data-id="<%=rep.post.id%>">
+								回复了<%=rep.post.author.name%>创建的主题 > 
+								<a class="title" data-id="<%=rep.post.id%>"><%=rep.post.title%></a>
+							</div>
+						</div>
+						<div class="content">
+							<div class="arrow"></div>
+							<%=rep.content%>
+						</div>
+					</li>
+				<% }) %>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="footer">

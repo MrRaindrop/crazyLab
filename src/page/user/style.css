@@ -22,7 +22,7 @@
 	position: relative;
 	width: 100%;
 	padding: 12px 12px 12px 44px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #ccc;
 }
 
 .page-user .body > .info > .icon {
@@ -64,8 +64,8 @@
 	-o-box-sizing: border-box;
 	position: relative;
 	width: 100%;
-	padding: 16px;
-	border-bottom: 1px solid #eee;
+	padding: 16px 16px 0;
+	border-bottom: 1px solid #ccc;
 }
 
 .page-user .body > .posts > .top {
@@ -88,6 +88,10 @@
 	width: 100%;
 	padding: 16px 0;
 	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .posts > .content .post:last-child {
+	border-bottom: none;
 }
 
 .page-user .body > .posts > .content .post > .title {
@@ -121,6 +125,82 @@
 }
 
 .page-user .body > .reply {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	padding: 16px;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .reply > .top {
+	padding: 2px 0;
+	font-size: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .reply > .content {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	position: relative;
+	width: 100%;
+}
+
+.page-user .body > .reply > .content .rep {
+	position: relative;
+	width: 100%;
+	padding: 16px 0 0;
+	border-bottom: 1px solid #eee;
+}
+
+.page-user .body > .reply > .content .rep > .info {
+	background-color: #eee;
+	padding: 3px 3px 8px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+}
+
+.page-user .body > .reply > .content .rep > .info > .reply-to {
+	background-color: #eee;
+	padding: 3px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	overflow: hidden;
+}
+
+.page-user .body > .reply > .content .rep > .info > .reply-to > .title {
+	color: #5E7C6B
+}
+
+.page-user .body > .reply > .content .rep > .info > .time {
+	float: right;
+	position: relative;
+	top: 3px;
+	right: 3px;
+}
+
+.page-user .body > .reply > .content .rep > .content {
+	position: relative;
+	padding: 8px;
+	color: #666;
+}
+
+.page-user .body > .reply > .content .rep > .content > .arrow {
+	position: absolute;
+	top: -11px;
+	left: 20px;
+	width: 0;
+	height: 0;
+	border: 6px solid #eee;
+	border-bottom: 6px solid #f7f7f7;
 }
 
 .page-user .footer {
