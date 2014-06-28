@@ -6,12 +6,12 @@
 		<% _.each(list, function(post, i, list) { %>
 			<li class="post" data-id="<%=post.id%>">
 				<div class="up">
-					<div class="icon" style="background-image:url(<%=post.author.icon%>)"></div>
+					<a class="icon" style="background-image:url(<%=post.author.icon%>)"></a>
 					<span class="type"><%=post.type%></span>
-					<span class="author touch-highlight" data-id="<%=post.author.id%>"><%=post.author.name%></span>
+					<a class="author touch-highlight" data-id="<%=post.author.id%>"><%=post.author.name%></a>
 				</div>
 				<div class="mid">
-					<div class="title touch-highlight"><%=post.title%></div>
+					<a class="title touch-highlight"><%=post.title%></a>
 					<div class="reply-num"><%=post.reply.length%></div>
 				</div>
 				<div class="down">

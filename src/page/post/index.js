@@ -33,8 +33,16 @@ define(function(require) {
 	};
 
 	Post.prototype.addEvents = function() {
-		// this.$d.find('li.post').on('tap', _.bind(this.onAuthorTapped, this));
+		this.$d.find('.author').on('tap', _.bind(this.onAuthorTapped, this));
 	};
+
+	Post.prototype.onAuthorTapped = function(e) {
+		var _t = $(e.target),
+			id = _t.attr('data-id');
+		e.preventDefault();
+		console.log('click author!', id);
+		router.setRoute('user', { id: id });
+	}
 
 	Post.prototype.onShow = function() {
 		this.$d.css('display', 'block');

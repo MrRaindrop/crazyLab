@@ -30,13 +30,13 @@ define([
 	};
 
 	App.prototype.bindGlobalEvents = function() {
-		$('.touch-highlight').live('tap', function(e) {
-			var _t = $(e.target);
-			_t.addClass('highlight');
-			setTimeout(function() {
-				_t.removeClass('highlight');
-			}, 200);
-		});
+		// $('.touch-highlight').live('tap', function(e) {
+		// 	var _t = $(e.target);
+		// 	_t.addClass('highlight');
+		// 	setTimeout(function() {
+		// 		_t.removeClass('highlight');
+		// 	}, 200);
+		// });
 	};
 
 	App.prototype.catchError = function() {

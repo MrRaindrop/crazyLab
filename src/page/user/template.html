@@ -7,7 +7,7 @@
 			<div class="detail">
 				<div class="name"><%=name%></div>
 				<div class="content">FreeIO第<%=number%>号会员，加入于<%=joinTime%></div>
-				<div class="site touch-highlight"><%=site%></div>
+				<a class="site" href="'http://' + <%=site%>"><%=site%></a>
 			</div>
 		</div>
 		<div class="posts">
@@ -16,10 +16,10 @@
 				<ul>
 				<% _.each(posts, function(post, i, posts) { %>
 					<li class="post" data-id="<%=post.id%>">
-						<div class="title touch-highlight"><%=post.title%></div>
+						<a class="title" href="<%=post.id%>"><%=post.title%></a>
 						<div class="info">
 							<span class="tag"><%=post.tag%></span>
-							<span class="author"><%=name%></span>
+							<span class="author" data-id="<%=id%>"><%=name%></span>
 							<span class="time"><%=post.time%></span>
 						</div>
 					</li>

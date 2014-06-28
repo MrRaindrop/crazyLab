@@ -33,18 +33,21 @@ define(function(require) {
 	};
 
 	User.prototype.addEvents = function() {
-		this.$d.find('li.post').on('tap', _.bind(this.onPostTapped, this));
+		this.$d.find('li.post').on('click', _.bind(this.onPostTapped, this));
 	};
 
 	User.prototype.onPostTapped = function(e) {
 		var _t = $(e.target), id;
+		e.preventDefault();
 		if (_t.hasClass('title')) {
 			_t = _t.closest('li.post');
 			id = _t.attr('data-id');
 			console.log('go to post page, id:', id);
 			router.setRoute('post', { 'id': id });
-		} else {
-			
+		} else if (_t.hasClass('author')) {
+			id = _t.attr('data-id');
+			console.log('go to user page, id', id);
+			router.setRoute('user', { 'id': id });
 		}
 	};
 

@@ -48,6 +48,7 @@ define(function(require) {
 
 		// when browser history back or forward.
 		onHashchange: function() {
+			console.log('onhashchange event!');
 			var hash = decodeURIComponent(location.hash),
 				hist = this.get('hist');
         	hash.charAt(0) === '#' && (hash = hash.substr(2));

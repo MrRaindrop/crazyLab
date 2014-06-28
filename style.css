@@ -16,14 +16,25 @@ ul,ol {
     list-style-type:none;
 }
 
-.highlight {
-	text-decoration: underline;
+.touch-highlight:active {
+	transfomr: scale(0.9);
+	-webkit-transfomr: scale(0.9);
+	-moz-transfomr: scale(0.9);
+	-o-transfomr: scale(0.9);
+	box-shadow: 0px 0px 20px #fff;
+	-webkit-box-shadow: 0px 0px 20px #fff;
+	-moz-box-shadow: 0px 0px 20px #fff;
+	-o-box-shadow: 0px 0px 20px #fff;
 }
 
-/*a {
+a {
 	color: #27ae61;
 	text-decoration: none;
-}*/
+}
+
+a:hover {
+	text-decoration: underline;
+}
 
 .current-page {
 	width: 100%;
