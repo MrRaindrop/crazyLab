@@ -1,0 +1,20 @@
+.page-register {
+	position: relative;
+	width: 100%;
+	background-color: #f7f7f7;
+}
+
+.page-register .header {
+	position: relative;
+	width: 100%;
+}
+
+.page-register .body {
+	position: relative;
+	width: 100%;
+}
+
+.page-register .footer {
+	position: relative;
+	width: 100%;
+}
