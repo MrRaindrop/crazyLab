@@ -4,7 +4,7 @@ define(function(require) {
 		$ = require('jquery'),
 		router = require('module/router'),
 		Page = require('pageManager/Page'),
-		inherit = require('util/inherits'),
+		inherits = require('util/inherits'),
 		HeaderUI = require('ui/header/Header'),
 		FooterUI = require('ui/footer/Footer');
 
@@ -35,11 +35,11 @@ define(function(require) {
 	};
 
 	PostList.prototype.addEvents = function() {
-		this.$d.find('li.post').on('tap', _.bind(this.onPostTapped, this));
+		this.$d.find('.form').on('submit', _.bind(this.onSubmit, this));
 	};
 
-	PostList.prototype.onPostTapped = function(e) {
-		var _t = $(e.target), id;
+	PostList.prototype.onSubmit = function(e) {
+		var _t = $(e.target);
 		if (_t.hasClass('author')) {
 			id = _t.attr('data-id');
 			console.log('go to user page id:', id);

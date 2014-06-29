@@ -14,3 +14,25 @@
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.ui-header > .nav {
+	position: absolute;
+	right: 32px;
+	top: 50%;
+	margin-top: -6px;
+	font-size: 12px;
+}
+
+.ui-header > .nav > a {
+	margin-right: 10px;
+	color: #fff;
+}
+
+.ui-header > .nav > .home {
+}
+
+.ui-header > .nav > .register {
+}
+
+.ui-header > .nav > .login {
+}

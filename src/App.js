@@ -3,11 +3,13 @@ define([
 	'backbone',
 	'pageManager/PageManager',
 	'module/router',
+	'module/user'
 ], function (
 	config,
 	Backbone,
 	PageManager,
-	router
+	router,
+	user
 ) {
 
 	var App = function(ct) {
@@ -26,6 +28,9 @@ define([
 		}, this);
 		this.bindGlobalEvents();
 		router.start();
+
+		// test
+		user.getCurrent();
 
 	};
 

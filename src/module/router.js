@@ -35,8 +35,12 @@ define(function(require) {
 				routes[rt.page] = { data:{} };
 				_.extend(routes[rt.page], rt);
 				str = rt.page;
-				for (var j = 0, m = rt.keys.length; j < m; j++) {
-					str += '/:' + rt.keys[j];
+				if (rt.keys) {
+					for (var j = 0, m = rt.keys.length; j < m; j++) {
+						str += '/:' + rt.keys[j];
+					}
+				} else {
+					str += '/'
 				}
 				// e.g. router.route('postlist/:tag1/:tag2', 'postlist');
 				router.route(str, rt.page);
@@ -100,7 +104,6 @@ define(function(require) {
 		setRoute: function(page, data, opt) {
 			var rt = this.get('routes')[page],
 				uri = page,
-				// hist = page,
 				routeOpt = {
 					trigger: true,
 					replace: false
@@ -110,11 +113,13 @@ define(function(require) {
 				console.error('error:no match route of page ' + page);
 				return;
 			}
-			_.each(rt.keys, function(k, i, ks) {
-				// hist += '/' + (data[k]);
-				uri += '/' + encodeURIComponent(data[k]);
-			});
-			// this.get('history').push(hist);
+			if (rt.keys) {
+				_.each(rt.keys, function(k, i, ks) {
+					uri += '/' + encodeURIComponent(data[k]);
+				});
+			} else {
+				uri += '/'
+			}
 			opt && _.extend(routeOpt, opt);
 			console.log('navigate to uri:', uri);
 			this.get('router').navigate(uri, routeOpt);
@@ -200,17 +205,19 @@ define(function(require) {
 
 			if (rt) {
 				if (page === oldPage) {
-					_.each(rt.keys, function(k, i, ks) {
-						if (rt.data[k] !== dataArr[i]) {
-							rt.data[k] = decodeURIComponent(dataArr[i]);
-							changedKeys.push(k);
-							self.trigger('change:' + page + ':' + k, rt.data[k]);
-						}
-					});
+					if (rt.keys) {
+						_.each(rt.keys, function(k, i, ks) {
+							if (rt.data[k] !== dataArr[i]) {
+								rt.data[k] = decodeURIComponent(dataArr[i]);
+								changedKeys.push(k);
+								self.trigger('change:' + page + ':' + k, rt.data[k]);
+							}
+						});
+					}
 				} else {
 					isPageChanged = true;
 					self.set('currentPage', page);
-					changedKeys = rt.keys.concat();
+					rt.keys && (changedKeys = rt.keys.concat());
 				}
 				this.trigger('change:route', {
 					isPageChanged: isPageChanged,

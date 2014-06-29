@@ -4,7 +4,7 @@ define(function(require) {
 		$ = require('jquery'),
 		router = require('module/router'),
 		Page = require('pageManager/Page'),
-		inherit = require('util/inherits'),
+		inherits = require('util/inherits'),
 		HeaderUI = require('ui/header/Header'),
 		FooterUI = require('ui/footer/Footer');
 

@@ -9,6 +9,8 @@ define(function() {
 		}, {
 			'page': 'user',
 			'keys': ['id']
+		}, {
+			'page': 'register'
 		}],
 		'home': {
 			'page': 'postlist',
